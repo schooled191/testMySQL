@@ -1,6 +1,6 @@
 <?php
 	foreach ($events['events'] as $event) {
-     if ($event['type'] == 'message' && $event['message']['text'] == 'ocr'){
+     if ($event['type'] == 'message' && ($event['message']['text'] == 'ocr' || $event['message']['text'] == 'Ocr' || $event['message']['text'] == 'OCR')){
       $userid = $event['source']['userId'];
 			$text = $event['message']['text'];
 			$replyToken = $event['replyToken'];
@@ -27,7 +27,7 @@
 			curl_close($ch);
 			echo $result . "\r\n";
       require "connectdatabase.php";
-		}elseif ($event['type'] == 'message' && $event['message']['text'] == 'similarity') {
+		}elseif ($event['type'] == 'message' && ($event['message']['text'] == 'similarity' || $event['message']['text'] == 'Similarity')) {
       $userid = $event['source']['userId'];
       $text = "similarities";
       $replyToken = $event['replyToken'];
