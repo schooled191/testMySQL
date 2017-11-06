@@ -27,7 +27,7 @@
 			curl_close($ch);
 			echo $result . "\r\n";
       require "connectdatabase.php";
-		}elseif ($event['type'] == 'message' && ($event['message']['text'] == 'similarity' || $event['message']['text'] == 'Similarity')) {
+		}elseif ($event['type'] == 'message' && ($event['message']['text'] == 'similarity' || $event['message']['text'] == 'Similarity' || $event['message']['text'] == 'SIMILARITY')) {
       $userid = $event['source']['userId'];
       $text = "similarities";
       $replyToken = $event['replyToken'];
