@@ -11,7 +11,7 @@ if (!is_null($events['events'])) {
     $userid = $event['source']['userId'];
   		if ($event['type'] == 'message' && ($event['message']['text'] == 'Nectec' || $event['message']['text'] == 'nectec')) {
         require "nectec.php";
-      }elseif ($event['type'] == 'message' && ($event['message']['text'] == 'ocr' || $event['message']['text'] == 'similarity')) {
+      }elseif ($event['type'] == 'message' && ($event['message']['text'] == 'ocr' || $event['message']['text'] == 'Ocr' ||$event['message']['text'] == 'OCR' || $event['message']['text'] == 'similarity' || $event['message']['text'] == 'Similarity' || $event['message']['text'] == 'SIMILARITY')) {
         require "dashbord.php";
       }elseif ($event['type'] == 'postback') {
         require "postback.php";
